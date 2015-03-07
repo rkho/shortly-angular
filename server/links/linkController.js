@@ -5,7 +5,6 @@ var Link    = require('./linkModel.js'),
 
 module.exports = {
   findUrl: function (req, res, next, code) {
-    console.log('---find url---');
 
     var findLink = Q.nbind(Link.findOne, Link);
     findLink({code: code})
@@ -74,7 +73,6 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
-    console.log('---nav to link---');
 
     var link = req.navLink;
     link.visits++;
