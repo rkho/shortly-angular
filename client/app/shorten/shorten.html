@@ -9,8 +9,10 @@
   </div>
 
   <form name="addLinkForm" ng-submit='addLink()'>
-    <input type='text' ng-model="link.url">
+    <input type='url' name="url" ng-model="link.url" required>
     <button>Shorten</button>
+    <div style="color: red" ng-show="addLinkForm.url.$error.required">You can't leave this field empty!</div>
+    <div style="color: red" ng-show="addLinkForm.url.$error.url">Not a valid URL!</div>
   </form>
 </div>
 
